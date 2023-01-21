@@ -1,0 +1,17 @@
+{
+    "name": "MySQL, Wildfly 14 and Maven on Debian 11",
+    "dockerFile": "Dockerfile",
+    "settings": {
+        "terminal.integrated.shell.linux": "/bin/bash"
+    },
+    "extensions": [
+        "ms-python.python",
+        "dbaeumer.vscode-eslint"
+    ],
+    "features": {
+        "ghcr.io/devcontainers/features/sshd:1": {
+            "version": "latest"
+        }
+    },
+    "forwardPorts": [8080,3306]
+}
