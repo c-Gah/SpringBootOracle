@@ -8,6 +8,19 @@ RUN apt-get update && apt upgrade -y && \
     apt-get install -y default-jdk && \
     apt-get install -y git
 
+# Install Maven
+RUN wget https://downloads.apache.org/maven/maven-3/3.8.7/binaries/apache-maven-3.8.7-bin.tar.gz && \
+    tar -zxvf apache-maven-3.8.7-bin.tar.gz && \
+    cp -r apache-maven-3.8.7 /opt/maven
+
+COPY maven.sh /etc/profile.d/maven.sh
+# Maven
+#RUN cp .devcontainer/maven.sh /etc/profile.d/maven.sh
+#RUN source /etc/profile.d/maven.sh
+
+# ls -a /opt/maven/conf/logging/simplelogger.properties ls
+
+
 # Update package list and install required packages
 #RUN apt-get update && apt-get install -y alien libaio1 unzip
 
