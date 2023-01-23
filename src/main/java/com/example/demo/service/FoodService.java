@@ -61,7 +61,7 @@ public class FoodService {
     }
 
     public List<Double> callOraclePackage25() {
-        System.out.println("callOraclePackage3 = ");
+        System.out.println("callOraclePackage2.5");
 
         SimpleJdbcCall simpleJdbcCall = new SimpleJdbcCall(jdbcTemplate)
                 .withCatalogName("food_management")
@@ -81,7 +81,7 @@ public class FoodService {
     }
 
     public List<Double> callOraclePackage3() {
-        System.out.println("callOraclePackage3 = ");
+        System.out.println("callOraclePackage3");
 
         SimpleJdbcCall simpleJdbcCall = new SimpleJdbcCall(jdbcTemplate)
                 .withCatalogName("food_management")
@@ -99,14 +99,6 @@ public class FoodService {
 
         return ttt;
     }
-    /*
-     * public String callOraclePackage3() {
-     * final String sql = "BEGIN food_management.get_apple_prices(); END;";
-     * 
-     * return "" + jdbcTemplate.queryForObject(sql, new Object[] { , Double.class);
-     * 
-     * }
-     */
 
     public String callOraclePackage4() {
         final String sql = "SELECT id, name, color, price FROM fruit";
@@ -124,22 +116,10 @@ public class FoodService {
         String returnValue = "";
 
         System.out.println("DATASOURCE = " + dataSource);
-        System.out.println("FruitRepository COUNTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT= " + fruitRepository);
-        System.out.println(
-                "FruitRepository COUNTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT= " + fruitRepository.count());
-        System.out.println(
-                "FruitRepository COUNTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT 222= " + fruitRepository.count());
-
-        System.out.println("DATASOURCE 0000 = " + fruitRepository.findByName("Apple"));
-        System.out.println("DATASOURCE qqqq = " + fruitRepository.findAll());
-
-        System.out.println("\n1.Apply()...");
-        // for (Fruit fruit : fruitRepository.findAll()) {
-        // returnValue = returnValue + fruit.getName();
-        // System.out.println(fruit);
-        // }
-        System.out.println("DATASOURCE 222 = " + dataSource);
-
+		
+        System.out.println("Repo find by name = " + fruitRepository.findByName("Apple"));
+        System.out.println("Repo find all = " + fruitRepository.findAll());
+		
         return returnValue;
     }
 
@@ -155,7 +135,7 @@ public class FoodService {
     }
 
     public String getTestData() {
-        return "This is test data 22";
+        return "This is test data";
     }
 
 }
