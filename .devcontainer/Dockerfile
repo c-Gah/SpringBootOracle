@@ -6,7 +6,7 @@ RUN dnf update -y && \
 # Set the working directory
 WORKDIR /opt
 
-dnf install -y wget
+RUN dnf install -y wget
 
 # Download the Oracle Database XE 21c rpm package
 RUN wget https://download.oracle.com/otn-pub/otn_software/db-express/oracle-database-xe-21c-1.0-1.ol7.x86_64.rpm
