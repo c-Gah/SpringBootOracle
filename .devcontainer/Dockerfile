@@ -6,11 +6,13 @@ RUN dnf update -y && \
 # Set the working directory
 WORKDIR /opt
 
+dnf install -y wget
+
 # Download the Oracle Database XE 21c rpm package
-#RUN wget https://download.oracle.com/otn-pub/otn_software/db-express/oracle-database-xe-21c-1.0-1.ol7.x86_64.rpm
+RUN wget https://download.oracle.com/otn-pub/otn_software/db-express/oracle-database-xe-21c-1.0-1.ol7.x86_64.rpm
 
 # Install the Oracle Database XE 21c package
-#RUN yum install -y oracle-database-xe-21c-1.0-1.ol7.x86_64.rpm
+RUN dnf install -y oracle-database-xe-21c-1.0-1.ol7.x86_64.rpm
 
 # Environment variables
 #ENV ORACLE_HOME=/opt/oracle/product/21c/dbhomeXE \
